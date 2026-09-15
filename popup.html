@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PrivacyLens Dashboard</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="app-container">
+    
+    <!-- Top Header -->
+    <header class="header">
+      <div class="brand">
+        <div class="brand-icon">🛡️</div>
+        <div>
+          <h1 class="brand-title">PRIVACY<span class="highlight">LENS</span></h1>
+          <p class="brand-subtitle">Privacy Nutrition Label</p>
+        </div>
+      </div>
+      <div class="demo-toggle-container" title="Toggle Hackathon Demo Data Mode">
+        <span class="demo-label">DEMO MODE</span>
+        <label class="switch">
+          <input type="checkbox" id="demoToggle">
+          <span class="slider round"></span>
+        </label>
+      </div>
+    </header>
+
+    <!-- Target Site Info Bar -->
+    <div class="site-bar">
+      <span class="site-icon">🌐</span>
+      <span class="site-domain" id="siteDomain">Scanning target domain...</span>
+      <span class="demo-badge hidden" id="demoBadge">DEMO</span>
+    </div>
+
+    <!-- Main Score & Risk Card -->
+    <div class="score-card">
+      <div class="score-circle-container">
+        <div class="score-circle" id="scoreCircle">
+          <span class="score-value" id="scoreValue">--</span>
+          <span class="score-max">/100</span>
+        </div>
+        <span class="score-label">Privacy Score</span>
+      </div>
+
+      <div class="risk-container">
+        <span class="risk-title">Risk Level</span>
+        <div class="risk-badge" id="riskBadge">ANALYZING</div>
+      </div>
+    </div>
+
+    <!-- Metrics Stat Grid -->
+    <div class="metrics-grid">
+      <div class="metric-card">
+        <div class="metric-icon">🍪</div>
+        <div class="metric-data">
+          <span class="metric-number" id="cookieCount">0</span>
+          <span class="metric-title">Cookies</span>
+        </div>
+      </div>
+
+      <div class="metric-card">
+        <div class="metric-icon">📡</div>
+        <div class="metric-data">
+          <span class="metric-number" id="thirdPartyCount">0</span>
+          <span class="metric-title">Third Parties</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Data Collected Section -->
+    <section class="section">
+      <h2 class="section-title">
+        <span>📥</span> Data Collected
+      </h2>
+      <div class="tags-container" id="dataCollectedTags">
+        <span class="tag tag-empty">Scanning data collection...</span>
+      </div>
+    </section>
+
+    <!-- AI Analysis Section -->
+    <section class="section">
+      <h2 class="section-title">
+        <span>🤖</span> AI Privacy Analysis
+      </h2>
+      
+      <!-- AI Summary Card -->
+      <div class="card summary-card" id="summaryCard">
+        <div class="loading-spinner" id="loadingSpinner"></div>
+        <p class="summary-text" id="summaryText">Initializing website privacy audit...</p>
+      </div>
+
+      <!-- Concerns Card -->
+      <div class="card concerns-card">
+        <h3 class="card-subtitle concerns-header">⚠️ Privacy Concerns</h3>
+        <ul class="bullet-list" id="concernsList">
+          <li>Analyzing tracking risks...</li>
+        </ul>
+      </div>
+
+      <!-- Recommendations Card -->
+      <div class="card recommendations-card">
+        <h3 class="card-subtitle recommendations-header">💡 Recommendations</h3>
+        <ul class="bullet-list" id="recommendationsList">
+          <li>Generating security recommendations...</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Bottom Footer Controls -->
+    <footer class="footer">
+      <button class="rescan-btn" id="rescanBtn">
+        <span class="btn-icon">🔄</span> Rescan Page
+      </button>
+      <div class="backend-status" id="backendStatus">
+        <span class="status-dot green"></span>
+        <span id="statusText">Backend Ready</span>
+      </div>
+    </footer>
+
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

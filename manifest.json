@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "PrivacyLens - Privacy Nutrition Label",
+  "version": "1.0.0",
+  "description": "Real-time AI-powered Privacy Nutrition Label and risk score for any website.",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "cookies",
+    "storage",
+    "tabs"
+  ],
+  "host_permissions": [
+    "<all_urls>",
+    "http://localhost:5000/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "PrivacyLens"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
